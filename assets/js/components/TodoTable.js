@@ -94,6 +94,11 @@ function TodoTable() {
                             </form>
                         </TableCell>
 
+
+                        <TableCell>
+                                           
+                        </TableCell>
+
                         <TableCell width={130} align="right">
                             <IconButton color="primary" onClick={onCreateSubmit}>
                                 <AddIcon/>
