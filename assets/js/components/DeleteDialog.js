@@ -16,7 +16,7 @@ function DeleteDialog(props) {
 
     return (
         <Dialog onClose={hide} fullWidth={true} maxWidth='sm' open={props.open}>
-            <DialogTitle>Are you sure you wish to delete this to-do?</DialogTitle>
+            <DialogTitle>Etes vous sûr de vouloir supprimer cette tâche?</DialogTitle>
             <DialogContent>
                 {props.todo.task}
             </DialogContent>
