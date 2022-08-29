@@ -9,8 +9,7 @@ const NotFound = () => {
         <Box textAlign="center">
             <Typography variant="h1">Page not found 404</Typography>
             <Link style={{textDecoration: 'none'}} to="/">
-                <Button color="primary" variant="contained" size="large">Go back the the
-                    homepage</Button>
+                <Button color="primary" variant="contained" size="large"> Retourner à la page d'accueil</Button>
             </Link>
         </Box>
     );
