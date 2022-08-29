@@ -1,4 +1,5 @@
 //REACT
+import DatePicker from 'react-date-picker'
 import React, {Fragment, useContext, useState} from 'react';
 //CONTEXT
 import {TodoContext} from '../contexts/TodoContext';
@@ -34,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 function TodoTable() {
     const context = useContext(TodoContext);
+    const [value, onChange] = useState(new Date());
     const [addTodoName, setAddTodoName] = useState('');
     const [addTodoDescription, setAddTodoDescription] = useState('');
     const [editIsShown, setEditIsShown] = useState(false);
@@ -92,11 +94,7 @@ function TodoTable() {
                                            fullWidth={true}
                                            multiline={true}/>
                             </form>
-                        </TableCell>
-
-
-                        <TableCell>
-                                           
+                            <DatePicker onChange={onChange} value={value} />   
                         </TableCell>
 
                         <TableCell width={130} align="right">
