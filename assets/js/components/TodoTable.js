@@ -104,7 +104,7 @@ function TodoTable() {
                         </TableCell>
                     </TableRow>
                     <TableRow className={classes.thead}>
-                        <TableCell width={200}>Task</TableCell>
+                        <TableCell width={200}>Tache</TableCell>
                         <TableCell>Description</TableCell>
                         <TableCell align="right">Actions</TableCell>
                     </TableRow>
