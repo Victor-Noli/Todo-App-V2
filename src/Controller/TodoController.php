@@ -62,13 +62,13 @@ class TodoController extends AbstractController
             $this->entityManager->flush();
         } catch (UniqueConstraintViolationException $exception) {
             return $this->json([
-                'message' => ['text' => 'Task has to be unique!', 'level' => 'error']
+                'message' => ['text' => 'Cette tâche doit être unique!', 'level' => 'error']
             ]);
 
         }
         return $this->json([
             'todo'    => $todo->toArray(),
-            'message' => ['text' => 'To-Do has been created!', 'level' => 'success']
+            'message' => ['text' => 'Tâche créée avec succès', 'level' => 'success']
         ]);
     }
 
@@ -118,7 +118,7 @@ class TodoController extends AbstractController
 
         if ($todo->getTask() === $content->task && $todo->getDescription() === $content->description) {
             return $this->json([
-                'message' => ['text' => 'There was no change to the To-Do. Neither the task or the description was changed.', 'level' => 'error']
+                'message' => ['text' => 'Aucun changement effectué car ni la descritpion, ni la tache ont été éditée', 'level' => 'error']
             ]);
         }
 
@@ -129,13 +129,13 @@ class TodoController extends AbstractController
             $this->entityManager->flush();
         } catch (Exception $exception) {
             return $this->json([
-                'message' => ['text' => 'Could not reach database when attempting to update a To-Do.', 'level' => 'error']
+                'message' => ['text' => 'Base de données injoignable lors de la mise à jour de cette tâche', 'level' => 'error']
             ]);
         }
 
         return $this->json([
             'todo'    => $todo->toArray(),
-            'message' => ['text' => 'To-Do successfully updated!', 'level' => 'success']
+            'message' => ['text' => 'Tâche mise à jour avec succès', 'level' => 'success']
         ]);
 
     }
@@ -153,13 +153,13 @@ class TodoController extends AbstractController
             $this->entityManager->flush();
         } catch (Exception $exception) {
             return $this->json([
-                'message' => ['text' => 'Could not reach database when attempting to delete a To-Do.', 'level' => 'error']
+                'message' => ['text' => 'Base de données injoignable lors de la suppression de cette tâche.', 'level' => 'error']
             ]);
 
         }
 
         return $this->json([
-            'message' => ['text' => 'To-Do has successfully been deleted!', 'level' => 'success']
+            'message' => ['text' => 'Cette tâche a bien été supprimée', 'level' => 'success']
         ]);
 
     }
